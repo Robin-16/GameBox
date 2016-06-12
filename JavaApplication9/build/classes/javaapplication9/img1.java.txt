@@ -1,0 +1,69 @@
+import java.applet.*;
+
+import java.awt.*;
+
+import java.awt.event.*;
+
+public class img1 extends Applet implements ActionListener
+
+{
+
+Image I;
+
+Label l1,l2,l3;
+
+TextField n1,n2;
+
+Button b;int ans;
+
+public void init()
+
+{
+
+I=getImage(getCodeBase(),”logo.jpg”);
+
+l1=new Label(“Number1: “);
+
+l2=new Label(“Number2: “);
+
+l3=new Label(“Answer:          “);
+
+n1=new TextField(5);
+
+n2=new TextField(5);
+
+b=new Button(“Click”);
+
+add(l1);
+
+add(n1);
+
+add(l2);
+
+add(n2);
+
+add(b);
+
+add(l3);
+
+b.addActionListener(this);
+
+}
+
+public void actionPerformed(ActionEvent ae)
+
+{
+
+ans=Integer.parseInt(n1.getText())+Integer.parseInt(n2.getText());
+
+l3.setText(“Answer:  “+ans);
+
+}
+
+public void paint(Graphics g)
+
+{
+
+g.drawImage(I,10,10,this);
+
+}
